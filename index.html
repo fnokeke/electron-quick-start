@@ -2,18 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Electron Desktop++</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <h1>Desktop++</h1>
+    <p>Use the features below to activate a function.</p>
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
+    <button onclick="startAppTracking()">Start Tracking</button>
+    <button onclick="stopAppTracking()">Stop Tracking</button>
+    <br>
+    <br>
+    <button onclick="notifyUser()">Notify Me</button>
+    <br>
+    <input type="text" id="input-cmd" placeholder="enter shell command..."/>
+    <button onclick="runShellUICommand()">Run Command</button>
+    <br>
+    <span id="span-cmd-response"></span>
+    <br>
+    <br>
+    <button onclick="showRecentApps()">Show Recent Apps</button>
+    <br>
+    <span id="span-apps-logged"></span>
+
   </body>
+
+  <script src="app.js"></script>
+<script src="renderer.js"></script>
 </html>
